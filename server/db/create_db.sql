@@ -17,11 +17,11 @@ CREATE TABLE TOPPING (
 );
 
 INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values( 'Margherita','Margherita.png',10.50,0);
-INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values ('Hawaiian','Ham_and_Pineapple.png',12.78,0);
-INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values ('Pepperoni','Pepperoni.png',13.50,0);
-INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values ('Salami + Peppers','Pepperoni_and_Peppers.png',11.50,0);
-INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values ('Vegetarian ','Vegetarian.png',8.50,0);
-INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values ('Meat Feast ','Meat_Feast.png',18.50,0);
+INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values ('Hawaiian','Ham_and_Pineapple.png',12,0);
+INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values ('Pepperoni','Pepperoni.png',13,0);
+INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values ('Salami + Peppers','Pepperoni_and_Peppers.png',11,0);
+INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values ('Vegetarian ','Vegetarian.png',8,0);
+INSERT INTO PIZZA (name,image_url,price,number_of_likes)  values ('Meat Feast ','Meat_Feast.png',18,0);
 
 
 INSERT INTO TOPPING (name,image_url,price)  values ('Ham','ham-link',1.50);
