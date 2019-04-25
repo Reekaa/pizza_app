@@ -38,6 +38,8 @@ class PizzaView{
 
     const buttons = this.createButtons();
 
+    const voteButton = this.createVoteButton();
+    this.container.appendChild(voteButton);
   }
 
   createButtons(){
@@ -64,6 +66,16 @@ class PizzaView{
     this.container.appendChild(button2);
     this.container.appendChild(button3);
   }
+
+  createVoteButton() {
+    const voteButton = document.createElement('button');
+    voteButton.textContent = 'Love it!';
+    voteButton.style.float = "right"
+    voteButton.addEventListener('click', (event) => {
+      PubSub.publish('PizzaView:vote-button-click');
+    });
+    return voteButton;
+  };
 
 }
 module.exports = PizzaView;

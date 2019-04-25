@@ -15,7 +15,11 @@ class Pizza {
       const newPizzaIndex = event.detail;
       const newPizza = this.data[newPizzaIndex];
       PubSub.publish("Pizza:pizza-selection-ready", newPizza)
-    })
+    });
+
+    PubSub.subscribe("PizzaView:vote-button-click", (event) => {
+      // TODO
+    });
   }
   //gets data from backend and publishes pizza data
   getData(){
