@@ -3,7 +3,7 @@ const PubSub = require('../helpers/pub_sub.js');
 class Price{
 
   constructor(){
-  this.container = document.querySelector('#display-price;');
+  this.container = document.querySelector('#display-price');
 
   }
 
@@ -19,9 +19,7 @@ class Price{
   }
 
   displayPrice(pizza, pizzaSize =1){
-    const orderPrice = document.createElement('h2');
-    orderPrice.textContent = pizza.price * pizzaSize;
-    console.log(orderPrice);
+    this.container.textContent = `£${pizza.price * pizzaSize}`;
 }
 
 }
