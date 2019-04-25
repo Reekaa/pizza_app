@@ -15,6 +15,7 @@ class PizzaView{
   }
 
   displayPizza(pizza){
+    this.container.innerHTML = ' ';
     const image = document.createElement('img');
     image.src = `images/${pizza.image_url}`;
     // image.classList.add("");
@@ -35,6 +36,33 @@ class PizzaView{
     this.container.appendChild(name);
     // this.container.appendChild(toppingsUL);
 
+    const buttons = this.createButtons();
+
+  }
+
+  createButtons(){
+    const button1 = document.createElement('button');
+    button1.multiplier = 1;
+    button1.textContent = 'Small';
+
+    const button2 = document.createElement('button');
+    button2.multiplier = 1.5;
+    button2.textContent = 'Medium';
+
+    const button3 = document.createElement('button');
+    button3.multiplier = 2;
+    button3.textContent = 'Large';
+
+    const buttons = [button1, button2, button3];
+    buttons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        PubSub.publish('PizzaView:size-button-click', button.multiplier);
+      });
+    });
+
+    this.container.appendChild(button1);
+    this.container.appendChild(button2);
+    this.container.appendChild(button3);
   }
 
 }
