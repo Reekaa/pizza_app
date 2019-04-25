@@ -10,16 +10,17 @@ class SelectPizzaView{
     PubSub.subscribe("Pizzas:pizza-data-loaded", (event) => {
       const allPizzas = event.detail;
       this.selectPizzaList(allPizzas);
-
     })
-
+//listens for change in pizza selection from dropdown list and
+//publishes the index of the new pizza back to pizza.js
       this.element.addEventListener('change', (event) => {
       const selectIndex = event.target.value;
       PubSub.publish("Pizza:change-pizza", selectIndex)
     })
   }
 
-//
+//creates option/dropdown menu displaying pizza name
+//and sets value as the pizza index
   selectPizzaList(pizzaData){
     pizzaData.forEach(pizza, index)=>{
       const option = document.createElement('option');
