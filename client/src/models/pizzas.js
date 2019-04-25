@@ -33,8 +33,22 @@ class Pizza {
     .catch((message) =>{
       console.error(message);
     })
-
   }
+
+  addVote(id){
+    const url = 'http://localhost:3000/pizzas'
+    const request = new RequestHelper(url);
+    request.get()
+    .then((data)=>{
+      this.data = data;
+      PubSub.publish("Pizzas:pizza-data-loaded", this.data);
+    })
+    .catch((message) =>{
+      console.error(message);
+    })
+  }
+
+
 }
 
 module.exports = Pizza;
