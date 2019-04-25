@@ -13,24 +13,24 @@ class PizzaView{
 
   displayPizza(pizza){
     const image = document.createElement('img');
-    image.src = pizza.image;
+    image.src = pizza.image_url;
     image.classList.add("");
 
     const description = document.createElement('p');
     description.textContent = pizza.description;
     description.classList.add("");
 
-    const toppingsUL = document.createElement('ul');
-    const toppings = pizza.toppings;
-    toppings.forEach((topping) => {
-      const toppingLI = document.createElement('li');
-      toppingLI.textContent = topping;
-      toppingsUL.appendChild(topping);
-    });
+    // const toppingsUL = document.createElement('ul');
+    // const toppings = pizza.toppings;
+    // toppings.forEach((topping) => {
+    //   const toppingLI = document.createElement('li');
+    //   toppingLI.textContent = topping;
+    //   toppingsUL.appendChild(topping);
+    // });
 
     this.container.appendChild(image);
     this.container.appendChild(description);
-    this.container.appendChild(toppingsUL);
+    // this.container.appendChild(toppingsUL);
 
   }
 
