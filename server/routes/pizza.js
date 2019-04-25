@@ -37,18 +37,17 @@ router.get('/', function(req, res){
 //   });
 // });
 //
-// router.put('/:id', function(req, res){
-//   console.log(req.params);
-//   SqlRunner.run(
-//     "UPDATE books SET =$1, =$2, =$3 WHERE id=$4",
-//     [req.body., req.body., req.body., req.params.id]
-//   ).then(result => {
-//     SqlRunner.run("SELECT * FROM books ORDER BY title ASC").then(result => {
-//       res.status(201).json(result.rows);
-//     });
-//   });
-// })
-//
+router.put('/:id', function(req, res){
+  SqlRunner.run(
+    "UPDATE pizza SET name=$1, price=$2, image_url=$3, popularity=$4+1 WHERE id=$5",
+    [req.body.name, req.body.price, req.body.image_url, req.body.popularity, req.params.id]
+  ).then(result => {
+    SqlRunner.run("SELECT * FROM pizza ORDER BY title ASC").then(result => {
+      res.status(201).json(result.rows);
+    });
+  });
+})
+
 
 
 
