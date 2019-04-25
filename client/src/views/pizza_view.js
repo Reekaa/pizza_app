@@ -15,6 +15,7 @@ class PizzaView{
   }
 
   displayPizza(pizza){
+    this.container.innerHTML = ' ';
     const image = document.createElement('img');
     image.src = `images/${pizza.image_url}`;
     // image.classList.add("");

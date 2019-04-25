@@ -9,6 +9,6 @@ linear-gradient(rgba(200,0,0,.3) 50%, transparent 50%);
   background-size:50px 50px;
 }
 
-image {
-  padding: 20px;
+img {
+  margin: 20px;
 }
