@@ -1,9 +1,44 @@
-body{
-  font-family: Arial, Helvetica, sans-serif;;
+h1 {
+  text-align: center;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.grid{
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  grid-template-rows: 100%;
+}
+
+.container {
+  grid-column: 1/2;
+}
+.price-container {
+  grid-column: 3/4;
+  background-image: url('../images/receipt.png');
+  height: 345px;
+  width: 250px;
+
+}
+
+#display-price {
+  float: right;
+  font-family: monospace;
+  font-size: 20px;
+  margin-top: 245px;
+  margin-right: 30px;
 }
 
 .checkered {
   background-image: linear-gradient(90deg, rgba(200,0,0,.3) 50%, transparent 50%),
 linear-gradient(rgba(200,0,0,.3) 50%, transparent 50%);
   background-size:50px 50px;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  background-color: ;
+  font-size: 30px;
 }
