@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1 {
   text-align: center;
 }
@@ -28,6 +29,11 @@ body {
   font-size: 20px;
   margin-top: 245px;
   margin-right: 30px;
+=======
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+>>>>>>> 1e6630a4e556ed1ce5925ca873e96f113eed9289
 }
 
 .checkered {
@@ -36,6 +42,7 @@ linear-gradient(rgba(200,0,0,.3) 50%, transparent 50%);
   background-size:50px 50px;
 }
 
+<<<<<<< HEAD
 button {
   width: 100px;
   height: 40px;
@@ -43,6 +50,8 @@ button {
   font-size: 30px;
 }
 
+=======
+>>>>>>> 1e6630a4e556ed1ce5925ca873e96f113eed9289
 img {
   margin: 20px;
 }
