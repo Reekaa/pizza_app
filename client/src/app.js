@@ -6,12 +6,18 @@ const PizzaView = require('./views/pizza_view.js');
 document.addEventListener("DOMContentLoaded", () => {
   console.log("JavaScript Loaded");
 
-const pizzas = new Pizza();
-pizzas.bindEvents()
-pizzas.getData()
-
 const selectPizzaView = new SelectPizzaView();
-selectPizzaView.bindEvents()
+  selectPizzaView.bindEvents()
+
+const pizzaView = new PizzaView();
+pizzaView.bindEvents();
+
+const pizzas = new Pizza();
+  pizzas.bindEvents()
+  pizzas.getData()
+
+
+
 
 
 });

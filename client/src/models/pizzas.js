@@ -12,16 +12,15 @@ class Pizza {
     //takes pizza index from users selection
     //then finds the pizza by index and publishes to pizza_view.js
     PubSub.subscribe("Pizza:change-pizza", (event)=>{
-      const newPizzaIndex = event.details;
-      console.log(newPizzaIndex);
+      const newPizzaIndex = event.detail;
       const newPizza = this.data[newPizzaIndex];
-      PubSub.publish("pizza:pizza-selection-ready", newPizza)
+      PubSub.publish("Pizza:pizza-selection-ready", newPizza)
     })
   }
   //gets data from backend and publishes pizza data
   getData(){
-    const url = 'http://localhost:3000/pizza'
-    const request = new requestHelper(url);
+    const url = 'http://localhost:3000/pizzas'
+    const request = new RequestHelper(url);
     request.get()
     .then((data)=>{
       this.data = data;

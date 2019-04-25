@@ -1,3 +1,5 @@
+const PubSub = require('../helpers/pub_sub.js');
+
 class SelectPizzaView{
 
   constructor(){
@@ -15,6 +17,7 @@ class SelectPizzaView{
 //publishes the index of the new pizza back to pizza.js
       this.element.addEventListener('change', (event) => {
       const selectIndex = event.target.value;
+      console.log(selectIndex);
       PubSub.publish("Pizza:change-pizza", selectIndex)
     })
   }
@@ -22,13 +25,22 @@ class SelectPizzaView{
 //creates option/dropdown menu displaying pizza name
 //and sets value as the pizza index
   selectPizzaList(pizzaData){
-    pizzaData.forEach(pizza, index)=>{
+    const empty = this.addEmptyOption();
+    this.element.appendChild(empty)
+    pizzaData.forEach((pizza, index)=>{
       const option = document.createElement('option');
       option.textContent = pizza.name;
       option.value = index;
       this.element.appendChild(option)
-    }
+    });
   }
+
+  addEmptyOption() {
+    const emptyOption = document.createElement('option');
+    emptyOption.selected = "disabled";
+    return emptyOption;
+  };
+
 }
 
 module.exports = SelectPizzaView;

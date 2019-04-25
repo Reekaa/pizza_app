@@ -1,3 +1,5 @@
+const PubSub = require('../helpers/pub_sub.js');
+
 class PizzaView{
 
   constructor(){
@@ -5,20 +7,21 @@ class PizzaView{
   }
 
   bindEvents(){
-    PubSub.subscribe("pizza:pizza-selection-ready", (event) => {
+    PubSub.subscribe("Pizza:pizza-selection-ready", (event) => {
       const pizza = event.detail;
+      console.log(pizza);
       this.displayPizza(pizza);
     })
   }
 
   displayPizza(pizza){
     const image = document.createElement('img');
-    image.src = pizza.image_url;
-    image.classList.add("");
+    image.src = `images/${pizza.image_url}`;
+    // image.classList.add("");
 
-    const description = document.createElement('p');
-    description.textContent = pizza.description;
-    description.classList.add("");
+    const name = document.createElement('p');
+    name.textContent = pizza.name;
+    // name.classList.add("");
 
     // const toppingsUL = document.createElement('ul');
     // const toppings = pizza.toppings;
@@ -29,7 +32,7 @@ class PizzaView{
     // });
 
     this.container.appendChild(image);
-    this.container.appendChild(description);
+    this.container.appendChild(name);
     // this.container.appendChild(toppingsUL);
 
   }
